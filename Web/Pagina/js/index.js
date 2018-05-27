@@ -24,7 +24,7 @@
             }
         });
       });
-      // Formulario Registro
+      // FORMULARIO REGISTRO VALIDACION y REGISTRARSE
 
         $("#registro").submit(function(e){
           e.preventDefault();
@@ -80,12 +80,13 @@
                 if (ret == true && ret2 == true && ret3 == true && ret4 == true && ret5 == true){
                    document.getElementById("enviar").innerHTML = "Enviando...";
                    document.getElementById("enviar").disabled = true;
-                   $("#popup2").delay("slow").fadeOut();
+                   $("#registro").delay("slow").fadeOut();
               }
 
               return ret;
 
             });
+
 
 
 

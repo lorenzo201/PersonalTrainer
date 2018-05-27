@@ -25,107 +25,8 @@
   <link href="css/tienda.css" rel="stylesheet">
 
 </head>
-<script type="text/javascript">
 
-</script>
-<style media="screen">
-/*ESTILOS FORMULARIO*/
-.card{
-	width: 400px;
-	margin: auto;
-	background-color: #E2ECEE;
-}
-.contacto{
-	border: 1px solid #CED5D7;
-	border-radius: 6px;
-	padding: 45px 45px 20px;
-	margin-top: 50px;
-	background-color: white;
-	box-shadow: 0px 5px 10px #B5C1C5, 0 0 0 10px #EEF5F7 inset;
-}
-.contacto label{
-	display: block;
-	font-weight: bold;
-}
-.contacto div{
-	margin-bottom: 15px;
-}
-.contacto input[type='text'], .contacto textarea{
-	padding: 7px 6px;
-	width: 294px;
-	border: 1px solid #CED5D7;
-	resize: none;
-	box-shadow:0 0 0 3px #EEF5F7;
-	margin: 5px 0;
-}
-.contacto input[type='text']:focus, .contacto textarea:focus{
-	outline: none;
-	box-shadow:0 0 0 3px #dde9ec;
-}
-.contacto input[type='text'].invalido, .contacto textarea.invalido{
-	box-shadow:0 0 0 3px #FFC9C9;
-}
-.contacto input[type='submit']{
-	border: 1px solid #CED5D7;
-	box-shadow:0 0 0 3px #EEF5F7;
-	padding: 8px 16px;
-	border-radius: 20px;
-	font-weight: bold;
-	text-shadow: 1px 1px 0px white;
 
-	background: #e4f1f6;
-	background: -moz-linear-gradient(top, #e4f1f6 0%, #cfe6ef 100%);
-	background: -webkit-linear-gradient(top, #e4f1f6 0%,#cfe6ef 100%);
-}
-.contacto input[type='submit']:hover{
-	background: #edfcff;
-	background: -moz-linear-gradient(top, #edfcff 0%, #cfe6ef 100%);
-	background: -webkit-linear-gradient(top, #edfcff 0%,#cfe6ef 100%);
-}
-.contacto input[type='submit']:active{
-	background: #cfe6ef;
-	background: -moz-linear-gradient(top, #cfe6ef 0%, #edfcff 100%);
-	background: -webkit-linear-gradient(top, #cfe6ef 0%,#edfcff 100%);
-}
-.error{
-    background-color: #BC1010;
-    border-radius: 4px 4px 4px 4px;
-    color: white;
-    font-weight: bold;
-    margin-left: 16px;
-    margin-top: 6px;
-    padding: 6px 12px;
-    position: absolute;
-}
-.error:before{
-    border-color: transparent #BC1010 transparent transparent;
-    border-style: solid;
-    border-width: 6px 8px;
-    content: "";
-    display: block;
-    height: 0;
-    left: -16px;
-    position: absolute;
-    top: 8px;
-    width: 0;
-}
-.result_fail{
-    background: none repeat scroll 0 0 #BC1010;
-    border-radius: 20px 20px 20px 20px;
-    color: white;
-    font-weight: bold;
-    padding: 10px 20px;
-    text-align: center;
-}
-.result_ok{
-    background: none repeat scroll 0 0 #1EA700;
-    border-radius: 20px 20px 20px 20px;
-    color: white;
-    font-weight: bold;
-    padding: 10px 20px;
-    text-align: center;
-}
-</style>
 
 <body>
 <!--Aqui empieza la cabecera-->
@@ -250,9 +151,11 @@
           <h1>Asesoramiento presencial en nuestras tiendas</h1>
 
            <br><br><br>
-           <img widht="200px" height="200px"src="img/personalT.jpg" alt="foto nombre tienda" id="foton" style="margin-right:30px">
-
-
+           <div align="center">
+           <img widht="200px" height="150px"src="img/asesoramiento1.jpeg" alt="foto nombre tienda" id="foton" style="margin-right:30px">
+         </div>
+         <br>
+         <br>
              <h3>Bienvenidos/as a Nuestra pagina de Personal Trainer</h3>
              <p style="text-align:left">Aqui vas a encontrar la ayuda que necesitas con mis planes de dieta y entrenamiento totalmente pensados para ti y
                 para que cumplas tu objetivo.
@@ -269,13 +172,90 @@
             <div class="col-lg-12 col-sm-12 portfolio-item">
               <!--Estas son  las cajas que he creado con cada servicio-->
               <div class="card h-100">
-                <form class='contacto'>
-                    <div><label>Tu Nombre:</label><input type='text' class='nombre' value=''></div>
-                    <div><label>Tu Email:</label><input type='text' class='email' value=''></div>
-                    <div><label>Asunto:</label><input type='text' class='asunto' value=''></div>
-                    <div><label>Mensaje:</label><textarea rows='6' class='mensaje'></textarea></div>
-                    <div><input type='submit' value='Envia Mensaje' class='boton'></div>
-                </form>
+                <h4 style="text-align:center">Formulario solicitar cita:</h4>
+                <br>
+                <form class="needs-validation" novalidate>
+                  <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom01">Nombre</label>
+        <input type="text" class="form-control" id="validationCustom01" placeholder="" value="" required>
+        <div class="invalid-feedback">
+          Porfavor completa campo usuario.
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom02">Usuario</label>
+        <input type="text" class="form-control" id="validationCustom02" placeholder="" value="" required>
+        <div class="invalid-feedback">
+          Porfavor completa campo usuario.
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationCustomUsername">Correo</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+          </div>
+          <input type="text" class="form-control" id="validationCustomUsername" placeholder="" aria-describedby="inputGroupPrepend" required>
+          <div class="invalid-feedback">
+            Porfavor completa campo correo.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationCustom03">Ciudad</label>
+        <input type="text" class="form-control" id="validationCustom03" placeholder="Ciudad" required>
+        <div class="invalid-feedback">
+          Porfavor completa campo ciudad.
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom04">Provincia</label>
+        <input type="text" class="form-control" id="validationCustom04" placeholder="Provincia" required>
+        <div class="invalid-feedback">
+          Porfavor completa campo provincia.
+        </div>
+      </div>
+      <br>
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom05">Motivo cita:</label>
+        <textarea rows='3'id="validationCustom05" class='mensaje'></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+        <label class="form-check-label" for="invalidCheck">
+          Acepta las condiciones.
+        </label>
+        <div class="invalid-feedback">
+          Tienes que aceptar las condiciones para enviar formulario.
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Enviar Formulario</button>
+  </form>
+  <script>
+(function() {'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})(alert("El formulario ha sido enviado,pronto recibira un correo con la fecha de la cita"));
+</script>
                 </div>
               </div>
             </div>
