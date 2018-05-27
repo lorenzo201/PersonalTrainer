@@ -15,7 +15,7 @@ try{
     $user=$_POST['usr'];
     $pass=$_POST['pass'];
 
-    $param=(array(':user' => $user, ':pass'=>md5($pass)));
+    $param=(array(':user' => $user, ':pass'=>$pass));
     $stmt = $conn->prepare("SELECT * FROM users WHERE username = :user AND password = :pass ");
     $stmt -> execute($param);
     $stmt->setFetchMode(PDO::FETCH_OBJ);
