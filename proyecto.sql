@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-02-2018 a las 22:10:35
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.1
+-- Tiempo de generación: 27-05-2018 a las 21:03:17
+-- Versión del servidor: 10.1.32-MariaDB
+-- Versión de PHP: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -189,21 +189,21 @@ INSERT INTO `stores` (`store_id`, `name`, `address`, `lat`, `lng`) VALUES
 
 CREATE TABLE `users` (
   `user_id` bigint(20) UNSIGNED NOT NULL,
-  `first_name` varchar(100) COLLATE utf8_general_mysql500_ci NOT NULL,
-  `last_name` varchar(100) COLLATE utf8_general_mysql500_ci NOT NULL,
-  `age` int(11) NOT NULL,
   `username` varchar(50) COLLATE utf8_general_mysql500_ci NOT NULL,
-  `password` varchar(50) COLLATE utf8_general_mysql500_ci NOT NULL
+  `password` varchar(50) COLLATE utf8_general_mysql500_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8_general_mysql500_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_mysql500_ci;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `age`, `username`, `password`) VALUES
-(1, 'Juan', 'Sánchez', 20, 'sergio', '1234'),
-(2, 'Antonia', 'González', 15, 'agonzalez', '5f4dcc3b5aa765d61d8327deb882cf99'),
-(3, 'Luisa', 'García', 18, 'lgarcia', 'ea847988ba59727dbf4e34ee75726dc3');
+INSERT INTO `users` (`user_id`, `username`, `password`, `email`) VALUES
+(1, 'sergio', '1234', ''),
+(2, 'agonzalez', '5f4dcc3b5aa765d61d8327deb882cf99', ''),
+(3, 'lgarcia', 'ea847988ba59727dbf4e34ee75726dc3', ''),
+(12, 'Sergio GuillÃ©n', '123', 'sergio141.96@gmail.com'),
+(13, 'asd', '123', 'sergio141.as96@gmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -301,7 +301,7 @@ ALTER TABLE `stores`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas
