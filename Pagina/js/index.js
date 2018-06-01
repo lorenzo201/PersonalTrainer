@@ -7,13 +7,11 @@
 
     // Coger el usuario del sessionStorage// recordarme usuario al cambiar a otra pagina
 
-      // var nombre = sessionStorage.getItem("username");
-      //
-      // if(nombre != null){
-      //   botones.innerHTML = "Bienvenido "+nombre+"!";
-      // }
+      var nombre = sessionStorage.getItem("username");
 
-
+      if(nombre != null){
+        botones.innerHTML = "Bienvenido "+nombre+"!";
+      }
 
           //BOTON LOGIN
       $("#login").submit(function(e){
