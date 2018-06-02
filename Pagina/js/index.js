@@ -5,13 +5,28 @@
       window.location.href = "index.html";
     });
 
-    // Coger el usuario del sessionStorage// recordarme usuario al cambiar a otra pagina
+
+    // Coger el usuario del sessionStorage// o localstorage
 
       var nombre = sessionStorage.getItem("username");
+      var nombre2 = localStorage.getItem("username");
+
 
       if(nombre != null){
-        botones.innerHTML = "Bienvenido "+nombre+"!";
+        botones.innerHTML = "Bienvenido "+nombre+"! <button type='button' class='btn btn-warning' id='cerrarsesion' style='margin-left:30px'>Salir</button>";
+        botones.style.color = "white";
+      }else if(nombre2 != null){
+        botones.innerHTML = "Bienvenido "+nombre2+"! <button type='button' class='btn btn-warning' id='cerrarsesion' style='margin-left:30px'>Salir</button>";
+        botones.style.color = "white";
       }
+
+    // Botón cerrar sesión
+
+      $("#cerrarsesion").click(function(){
+        sessionStorage.removeItem("username");
+        localStorage.removeItem("username");
+        window.location.href = "index.html";
+      });
 
           //BOTON LOGIN
       $("#login").submit(function(e){
@@ -20,19 +35,41 @@
                 var respuesta = JSON.parse(data);
 
                 if(respuesta.estatus == true){
-                  sessionStorage.setItem("username", usuario.value);
+                  if(recordarme.checked){
+                    localStorage.setItem("username", usuario.value);
+                  }else{
+                    sessionStorage.setItem("username", usuario.value);
+                  }
+
                   var nombre = sessionStorage.getItem("username");
-                  botones.innerHTML = "Bienvenido "+nombre+"!";
+                  var nombre2 = localStorage.getItem("username");
+
+                  if(nombre != null){
+                    botones.innerHTML = "Bienvenido "+nombre+"! <button type='button' class='btn btn-warning' id='cerrarsesion' style='margin-left:30px'>Salir</button>";
+                    botones.style.color = "white";
+                  }else if(nombre2 != null){
+                    botones.innerHTML = "Bienvenido "+nombre2+"! <button type='button' class='btn btn-warning' id='cerrarsesion' style='margin-left:30px'>Salir</button>";
+                    botones.style.color = "white";
+                  }
+
                   $('#cerrar').click();
                 }else{
                   var err = document.getElementsByClassName('errores')[0];
                   err.style.color="red";
                   err.innerHTML = "Usuario incorrecto";
                 }
+
+                // Botón cerrar sesión
+
+                $("#cerrarsesion").click(function(){
+                  sessionStorage.removeItem("username");
+                  localStorage.removeItem("username");
+                  window.location.href = "index.html";
+                });
+
             });
 
       });
-
 
       // FORMULARIO REGISTRO VALIDACION y REGISTRARSE
 
@@ -100,6 +137,8 @@
               return ret;
 
             });
+
+
 
 
 });
