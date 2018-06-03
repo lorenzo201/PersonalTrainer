@@ -143,7 +143,7 @@ h2{
 /*ANIMACION*/
 /*animacion de goku*/
 @keyframes animacion {
-  from {margin-left: 100%;}
+  from {margin-left: 90%;}
   to {margin-right: 0px;}
 }
 #animacion {

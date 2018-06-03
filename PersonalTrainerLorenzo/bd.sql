@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-06-2018 a las 21:27:30
+-- Tiempo de generación: 03-06-2018 a las 23:26:17
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -25,6 +25,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `cita`
+--
+
+CREATE TABLE `cita` (
+  `id` int(20) NOT NULL,
+  `nombre` varchar(100) COLLATE utf8_general_mysql500_ci NOT NULL,
+  `apellidos` varchar(100) COLLATE utf8_general_mysql500_ci NOT NULL,
+  `provincia` varchar(50) COLLATE utf8_general_mysql500_ci NOT NULL,
+  `ciudad` varchar(30) COLLATE utf8_general_mysql500_ci NOT NULL,
+  `dia` date NOT NULL,
+  `hora` varchar(20) COLLATE utf8_general_mysql500_ci NOT NULL,
+  `cp` int(10) NOT NULL,
+  `motivos` varchar(5000) COLLATE utf8_general_mysql500_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_mysql500_ci;
+
+--
+-- Volcado de datos para la tabla `cita`
+--
+
+INSERT INTO `cita` (`id`, `nombre`, `apellidos`, `provincia`, `ciudad`, `dia`, `hora`, `cp`, `motivos`) VALUES
+(1, '', '0', '', '', '0000-00-00', '', 46017, ''),
+(2, '', '0', '', '', '0000-00-00', '', 46017, ''),
+(3, 'Lorenzo', 'Trif', 'Valencia', 'Valencia', '2018-06-22', '12', 46017, 'asd');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `comentarios`
 --
 
@@ -40,17 +67,10 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`comentario`, `username`, `fecha`, `articulo`) VALUES
-('asdasd', 'sergio', '2018-06-03', 0),
-('asdasdads', 'sergio', '2018-06-03', 2),
-('ss', 'sergio', '2018-06-03', 2),
-('hola', '', '2018-06-03', 1),
-('asdasd', '', '2018-06-03', 1),
-('aa', '', '2018-06-03', 1),
-('asdasd', '', '2018-06-03', 1),
-('pollon', '', '2018-06-03', 1),
-('pollitafina', 'sergio', '2018-06-03', 1),
-('jejej ', 'sergio', '2018-06-03', 2),
-('que loco xd', 'sergio', '2018-06-03', 2);
+('asdasd', 'lorenzo', '2018-06-03', 0),
+('asdasdads', 'lorenzo', '2018-06-03', 2),
+('ss', 'lorenzo', '2018-06-03', 2),
+('asdasd', 'lorenzo', '2018-06-03', 1);
 
 -- --------------------------------------------------------
 
@@ -70,15 +90,21 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `email`) VALUES
-(1, 'sergio', '1234', ''),
+(1, 'lorenzo', '1234', ''),
 (2, 'agonzalez', '5f4dcc3b5aa765d61d8327deb882cf99', ''),
 (3, 'lgarcia', 'ea847988ba59727dbf4e34ee75726dc3', ''),
-(12, 'Sergio GuillÃ©n', '123', 'sergio141.96@gmail.com'),
-(13, 'asd', '123', 'sergio141.as96@gmail.com');
+(12, 'lorenzo9', '1234', 'lo@gmail.com'),
+(13, 'asd', '123', 'l@gmail.com');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `cita`
+--
+ALTER TABLE `cita`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `users`
@@ -89,6 +115,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `cita`
+--
+ALTER TABLE `cita`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

@@ -19,7 +19,8 @@
         if(nombre != null || nombre2 != null){
           window.location.href = "blog.html";
         }else{
-         alertify.alert('Espera!',"Debes estar registrado para acceder.");
+         alertify.confirm('Espera!', 'Debes estar registrado para acceder.', function(){ $("#registrarse").modal("show"); }
+           , function(){});
         }
       });
 
@@ -30,7 +31,8 @@
         if(nombre != null || nombre2 != null){
           window.location.href = "asesoramiento.html";
         }else{
-         alertify.alert('Espera!',"Debes estar registrado para acceder.");
+          alertify.confirm('Espera!', 'Debes estar registrado para acceder.', function(){ $("#registrarse").modal("show"); }
+            , function(){});
         }
       });
 
