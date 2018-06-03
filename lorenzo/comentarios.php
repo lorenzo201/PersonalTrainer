@@ -33,11 +33,6 @@ try{
       }
 
 
-
-
-
-
-
     break;
 
     default:
@@ -50,8 +45,6 @@ try{
 } catch (PDOException $e) {
   echo "Error: " . $e->getMessage();
 }
-
-
 
 
 // Close connection

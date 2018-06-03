@@ -23,6 +23,10 @@
     <!-- El css del index  -->
   <link href="css/tienda.css" rel="stylesheet">
 
+  <!-- Alertifyjs -->
+  <script src="../alertifyjs/alertify.min.js"></script>
+  <link rel="stylesheet" href="../alertifyjs/css/alertify.min.css" />
+  <link rel="stylesheet" href="../alertifyjs/css/themes/default.min.css" />
 </head>
 
 
@@ -244,41 +248,25 @@ background-color: rgba(0, 0, 0, .3);
         jugador de básquet es capaz de saltar más alto y a mayor velocidad que sus contrincantes, es probable que pueda ganar la mayoría de los
         rebotes defensivos y ofensivos, además de darle a su equipo un mayor número de posesiones, lo que se traduce en más oportunidades de tiro y,
          por lo tanto, más probabilidades de ganar.</p>
-         <div class="table-container">
-         <form id="form1" name="form1" method="post" action="enviar.php" onsubmit="return verifica()">
-                 <table width="80" border="0"  bgcolor="#FFFFFF">
-                       <tr>
-                         <td colspan="2"><div align="center" class="style30 style44">Deja tu Comentarios:</div></td>
-                       </tr>
-                       <tr>
-                         <td ><span class="style21 style29 style44">Usuario</span></td>
-                         <td width="80" bgcolor="#FFFFFF"><div align="center" class="style29">
-                             <input name="tema" type="text" id="tema" size="10" />
-                         </div></td>
-                       </tr>
-                       <tr>
-                         <td><span class="style21 style29 style44">Comentario</span></td>
-                         <td><span class="style29">
-                           <label></label>
-                           <textarea name="comentario" id="comentario" rows="5" cols="20"></textarea>
-                         </span></td>
-                       </tr>
-                       <tr>
-                         <td colspan="2"><div align="center">
-                             <input type="submit" name="Submit" value="enviar" />
-                         </div></td>
-                       </tr>
-           </table>
-         </form>
+         <div class="row bootstrap snippets">
+             <div class="col-md-12 col-md-offset-12 col-sm-12">
+                 <div class="comment-wrapper">
+                     <div class="panel panel-info">
+                         <div class="panel-heading">
+                             Comentarios:
+                         </div>
+                         <div class="panel-body">
+                             <textarea class="form-control" placeholder="Escribe un comentario..." rows="3" id="comentario"></textarea>
+                             <br>
+                             <button type="button" class="btn btn-info pull-right" id="addcomentario">Enviar</button>
+                             <div class="clearfix"></div>
+                             <hr>
+                               <div id="divcomentarios"></div>
+                         </div>
+                     </div>
+                 </div>
 
-                     <table width="53%" border="0" align="center" cellpadding="0" cellspacing="0">
-                       <tr>
-                         <td align="center"><?php
-           readfile ("texto.txt")
-           ?></td>
-                       </tr>
-                     </table>
-
+             </div>
          </div>
     </div>
   </div>
@@ -349,10 +337,7 @@ background-color: rgba(0, 0, 0, .3);
 </div>
 
 <!-- Fin del w3-content -->
-
-
-
-    </main>
+</main>
 <!-- /.container -->
 <!-- Footer-Aqui comienza el footer -->
 <footer>
@@ -386,12 +371,11 @@ background-color: rgba(0, 0, 0, .3);
                     </ul>
                 </div>
             </div>
-            <!--/.row-->
         </div>
-        <!--/.container-->
     </div>
-    <!--/.footer-->
 </footer>
+
+<div id="num" name="1"></div>
 </body>
 
 
@@ -400,8 +384,10 @@ background-color: rgba(0, 0, 0, .3);
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="js/index.js"></script>
+<script src="js/comentarios.js"></script>
 
 </html>

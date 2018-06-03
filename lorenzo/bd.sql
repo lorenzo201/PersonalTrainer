@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-06-2018 a las 15:33:50
+-- Tiempo de generación: 03-06-2018 a las 21:27:30
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -40,8 +40,17 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`comentario`, `username`, `fecha`, `articulo`) VALUES
-('asdasd', 'sergio', '2018-06-03', 2),
-('asdasdasdadsadsczxczcx', 'sergio', '2018-06-03', 2);
+('asdasd', 'sergio', '2018-06-03', 0),
+('asdasdads', 'sergio', '2018-06-03', 2),
+('ss', 'sergio', '2018-06-03', 2),
+('hola', '', '2018-06-03', 1),
+('asdasd', '', '2018-06-03', 1),
+('aa', '', '2018-06-03', 1),
+('asdasd', '', '2018-06-03', 1),
+('pollon', '', '2018-06-03', 1),
+('pollitafina', 'sergio', '2018-06-03', 1),
+('jejej ', 'sergio', '2018-06-03', 2),
+('que loco xd', 'sergio', '2018-06-03', 2);
 
 -- --------------------------------------------------------
 

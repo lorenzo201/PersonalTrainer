@@ -5,11 +5,34 @@
       window.location.href = "index.html";
     });
 
-
     // Coger el usuario del sessionStorage// o localstorage
 
       var nombre = sessionStorage.getItem("username");
       var nombre2 = localStorage.getItem("username");
+
+      //No dejar entrar a blog y asesoramientos
+
+      $("#blog").click(function(){
+        var nombre = sessionStorage.getItem("username");
+        var nombre2 = localStorage.getItem("username");
+
+        if(nombre != null || nombre2 != null){
+          window.location.href = "blog.html";
+        }else{
+         alertify.alert('Espera!',"Debes estar registrado para acceder.");
+        }
+      });
+
+      $("#asesoramiento").click(function(){
+        var nombre = sessionStorage.getItem("username");
+        var nombre2 = localStorage.getItem("username");
+
+        if(nombre != null || nombre2 != null){
+          window.location.href = "asesoramiento.html";
+        }else{
+         alertify.alert('Espera!',"Debes estar registrado para acceder.");
+        }
+      });
 
 
       if(nombre != null){
@@ -114,8 +137,9 @@
 
                            // seleccionar el check acuerdo de licencia
 
-                           if(!condiciones.checked){
+                           if(!condiciones.checked && ret == true){
                              ret = false;
+                             alertify.alert('Por favor!',"Acepta los Términos y condiciones.");
                            }
 
                 if (ret == true){
@@ -124,10 +148,10 @@
                         var respuesta = JSON.parse(data);
                         console.log(respuesta);
                         if(respuesta == "true"){
-                          alert("Te has registrado correctamente!");
+                          alertify.alert('Gracias!',"Te has registrado correctamente!");
                           $('#close').click();
                         }else{
-                          alert("El usuario o email ya existen!");
+                          alertify.alert('Error!',"El usuario o email ya existen!");
                         }
                     });
 
@@ -137,8 +161,6 @@
               return ret;
 
             });
-
-
 
 
 });
