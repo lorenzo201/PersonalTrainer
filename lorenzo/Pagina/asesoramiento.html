@@ -147,7 +147,7 @@
 
     <main role="main" class="container">
       <!-- Titulo y Servicios       AQUI EMPIEZA MI CONTENIDO DE LA PAGINA-->
-          <h1>Asesoramiento presencial en nuestras tiendas</h1>
+          <h1 style="text-align:center">Asesoramiento presencial en nuestras tiendas</h1>
 
            <br><br><br>
            <div align="center">
@@ -155,7 +155,7 @@
          </div>
          <br>
          <br>
-             <h3>Bienvenidos/as a Nuestra pagina de Personal Trainer</h3>
+             <h3 style="text-align:center">Bienvenidos/as a Nuestra pagina de Personal Trainer</h3>
              <p style="text-align:left">Aqui vas a encontrar la ayuda que necesitas con mis planes de dieta y entrenamiento totalmente pensados para ti y
                 para que cumplas tu objetivo.
                Porque con mi apoyo y con el de mi equipo, conseguirás resultados y eso hará que te motives y que logres ver cambios de manera
@@ -170,90 +170,156 @@
           <div class="row">
             <div class="col-lg-12 col-sm-12 portfolio-item">
               <!--Estas son  las cajas que he creado con cada servicio-->
-              <div class="card h-100">
+              <div class="formulario">
                 <h4 style="text-align:center">Formulario solicitar cita:</h4>
                 <br>
-                <form class="needs-validation" novalidate>
+                <form id="formulario"  method="get" enctype="application/x-www-urlencoded">
                   <div class="form-row">
-      <div class="col-md-4 mb-3">
-        <label for="validationCustom01">Nombre</label>
-        <input type="text" class="form-control" id="validationCustom01" placeholder="" value="" required>
-        <div class="invalid-feedback">
-          Porfavor completa campo usuario.
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="validationCustom02">Usuario</label>
-        <input type="text" class="form-control" id="validationCustom02" placeholder="" value="" required>
-        <div class="invalid-feedback">
-          Porfavor completa campo usuario.
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="validationCustomUsername">Correo</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroupPrepend">@</span>
-          </div>
-          <input type="text" class="form-control" id="validationCustomUsername" placeholder="" aria-describedby="inputGroupPrepend" required>
-          <div class="invalid-feedback">
-            Porfavor completa campo correo.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="col-md-6 mb-3">
-        <label for="validationCustom03">Ciudad</label>
-        <input type="text" class="form-control" id="validationCustom03" placeholder="Ciudad" required>
-        <div class="invalid-feedback">
-          Porfavor completa campo ciudad.
-        </div>
-      </div>
-      <div class="col-md-3 mb-3">
-        <label for="validationCustom04">Provincia</label>
-        <input type="text" class="form-control" id="validationCustom04" placeholder="Provincia" required>
-        <div class="invalid-feedback">
-          Porfavor completa campo provincia.
-        </div>
-      </div>
-      <br>
-      <div class="col-md-3 mb-3">
-        <label for="validationCustom05">Motivo cita:</label>
-        <textarea rows='3'id="validationCustom05" class='mensaje'></textarea>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-        <label class="form-check-label" for="invalidCheck">
-          Acepta las condiciones.
-        </label>
-        <div class="invalid-feedback">
-          Tienes que aceptar las condiciones para enviar formulario.
-        </div>
-      </div>
-    </div>
-    <button class="btn btn-primary" type="submit">Enviar Formulario</button>
+                    <div class="form-group col-md-6">
+                      <label for="nombre">Nombre*</label>
+                      <input type="nombre" class="form-control" id="nombre" placeholder="nombre">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="apellidos">Apellidos*</label>
+                      <input type="apellidos" class="form-control" id="apellidos" placeholder="apellidos">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="provincia">Provincia*</label>
+                      <input type="provincia" class="form-control" id="provincia" placeholder="provincia">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="ciudad">Ciudad*</label>
+                      <input type="ciudad" class="form-control" id="ciudad" placeholder="ciudad">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-2">
+                      <label for="fecha">Dia Solicitado*</label>
+                      <input type="date"name="fecha" class="form-control" id="fecha" placeholder="">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputState">Hora*</label>
+                      <input type="hora" class="form-control" id="hora" placeholder="">
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="codigo">Codigo Postal</label>
+                      <input type="text" class="form-control" id="codigo">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Motivos Cita*</label>
+                      <textarea class="form-control" id="cita" rows="3"></textarea>
+                      <strong>Los horarios disponibles son de 08h a 21h. Especifique 2 dígitos para indicar la hora de reserva.</strong>
+                    </div>
+                  </div>
+                  <button type="submit" value="Enviar" id="enviar1" class="btn btn-primary">Pedir Cita</button>
+                  <div id="error3"></div>
   </form>
-  <script>
-(function() {'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
 
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
+
+  <script>
+  $("#formulario").submit(function(e){
+    e.preventDefault();
+      //Impido que se envíe el formulario hasta saber si todo va bien
+
+      var error = document.getElementById('error3');
+      //Listado de errores
+      var errList ="";
+
+      //ValOK nos dirá si todo ha ido bien cuando acabe la validación
+      var valOK = true;
+
+      // validar nombre
+      var nombre = document.forms["formulario"]["nombre"].value;
+      if ( nombre == null || nombre == "" || nombre.length == 0  || /^\s+$/.test(nombre) || !isNaN(nombre) ) {
+          ret = false;
+         document.getElementById("nombre").style.border = '1px solid red';
+       }else{
+         document.getElementById("nombre").style.border = '1px solid lightgray';
+       }
+
+       // validar apellidos
+       var apellidos = document.forms["formulario"]["apellidos"].value;
+       if ( apellidos == null || apellidos == "" || apellidos.length == 0  || /^\s+$/.test(apellidos) || !isNaN(apellidos) ) {
+           ret = false;
+          document.getElementById("apellidos").style.border = '1px solid red';
+        }else{
+          document.getElementById("apellidos").style.border = '1px solid lightgray';
         }
-        form.classList.add('was-validated');
-      }, false);
+
+        // validar provincia
+        var provincia = document.forms["formulario"]["provincia"].value;
+        if ( provincia == null || provincia == "" || provincia.length == 0  || /^\s+$/.test(provincia) || !isNaN(provincia) ) {
+            ret = false;
+           document.getElementById("provincia").style.border = '1px solid red';
+         }else{
+           document.getElementById("provincia").style.border = '1px solid lightgray';
+         }
+         // validar ciudad
+         var ciudad = document.forms["formulario"]["ciudad"].value;
+         if ( ciudad == null || ciudad == "" || ciudad.length == 0  || /^\s+$/.test(ciudad) || !isNaN(ciudad) ) {
+             ret = false;
+            document.getElementById("ciudad").style.border = '1px solid red';
+          }else{
+            document.getElementById("ciudad").style.border = '1px solid lightgray';
+          }
+
+          // validar motivos cita
+          var cita = document.forms["formulario"]["cita"].value;
+          if ( cita == null || cita == "" || cita.length == 0  || /^\s+$/.test(cita) || !isNaN(cita) ) {
+              ret = false;
+             document.getElementById("cita").style.border = '1px solid red';
+           }else{
+             document.getElementById("cita").style.border = '1px solid lightgray';
+           }
+
+
+        // validar motivos hora
+        var hora = document.forms["formulario"]["hora"].value;
+        if ( hora == null || hora == "" || hora.length == 0  ||!(/^\d{2}$/.test(hora)) || hora < 8 || hora > 21) {
+            ret = false;
+           document.getElementById("hora").style.border = '1px solid red';
+         }else{
+           document.getElementById("hora").style.border = '1px solid lightgray';
+         }
+
+         //Validamos fecha
+
+         var fecha = document.forms["formulario"]["fecha"].value;
+         console.log(fecha);
+         var ano=fecha[0];
+         var mes=fecha[1];// de 0 a 11
+         var dia=fecha[2];// 1 a 31
+         var nf= new Date(ano,(mes - 1),dia,hora); //incluyo la hora para calcular la fecha
+         console.log(nf);
+         var hoy = new Date();
+         console.log(hoy);
+         console.log(hoy - nf);
+         if ( isNaN(nf) || dia < 1 || dia > 31 || mes < 1 || mes > 12 || ano < hoy.getFullYear()) {
+             valOK = false;
+             document.getElementById("fecha").style.border = '1px solid red';
+          }else if (hoy > nf) {
+            valOK = true;
+            document.getElementById("fecha").style.border = '1px solid lightgray';
+          }
+
+
+
+      if (valOK){
+        //Si estoy aquí, voy a enviar el formulario y todo ha ido bien
+        //Si todo va bien envío el formulario
+        //formulario.submit();
+      }else{
+        errores.style.color="red";
+        errores.innerHTML = errList;
+      }
+
     });
-  }, false);
-})(alert("El formulario ha sido enviado,pronto recibira un correo con la fecha de la cita"));
+
+
 </script>
                 </div>
               </div>
